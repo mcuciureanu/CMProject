@@ -6,4 +6,4 @@ Cata aici
 ...
 Scrie aici sub(Cata)
 Scrie aici sus(Mihai)
-,,,
+varianta1
