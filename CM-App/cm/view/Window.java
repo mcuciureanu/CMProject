@@ -6,11 +6,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Window {
-	private JFrame frame = new JFrame("Title");
-	private JPanel panel = new JPanel();
-    private JButton[] answerButton = new JButton[4];
-    private JButton nextButton = new JButton("Next");
-    private JLabel questionLable = new JLabel();
+	private JFrame frame;
+	private JPanel panel;
+    private JButton[] answerButton;
+    private JButton nextButton;
+    private JLabel questionLable;
 	
 	public Window(){
 		setFrame();
@@ -20,6 +20,7 @@ public class Window {
 	}
 	
 	public void setFrame(){
+		frame = new JFrame("Title");
         frame.setSize(600, 400);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -27,23 +28,28 @@ public class Window {
 	}
 	
 	public void setPanel(){
+		panel = new JPanel();
 		frame.add(panel);
 	}
 	
 	public void setLable(){
+		questionLable = new JLabel();
 		questionLable.setText("question");
-		questionLable.setHorizontalAlignment(200);
-		questionLable.setVerticalAlignment(100);
+		//questionLable.setHorizontalAlignment(200);
+		//questionLable.setVerticalAlignment(100);
 		frame.add(questionLable);
 	}
 	
 	public void setAnswerButtons(){
+		answerButton = new JButton[4];
+		 
 		for(JButton button : answerButton){
 			panel.add(button);
 		}
 	}
 	
 	public void setNextButton(){
+		nextButton = new JButton("Next");
 		panel.add(nextButton);
 	}
 }
