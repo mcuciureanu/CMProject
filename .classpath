@@ -4,6 +4,6 @@
 	<classpathentry kind="src" path="CM-App"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SpringLib"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/SpringLib"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
