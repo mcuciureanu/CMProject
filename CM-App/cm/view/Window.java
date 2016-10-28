@@ -13,7 +13,7 @@ public class Window {
     private JButton[] answerButton = new JButton[4];
     private JButton nextButton = new JButton("Next");
     private JLabel questionLable = new JLabel();
-	
+	//
 	public Window(){
 		setFrame();
 		setPanel();
