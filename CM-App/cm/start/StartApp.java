@@ -1,15 +1,12 @@
 package cm.start;
 
+import cm.controller.ControllerStart;
+
 public class StartApp {
 
-	private String message;
-
-	public void setMessage(String message) {
-		this.message = message;
+	public static ControllerStart start;
+	
+	public static void main(String[] args){
+		start = new ControllerStart();
 	}
-
-	public void getMessage() {
-		System.out.println("Your Message : " + message);
-	}
-
 }

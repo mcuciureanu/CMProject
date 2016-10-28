@@ -1,7 +1,5 @@
 package cm.view;
 
-import java.awt.FlowLayout;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -13,7 +11,7 @@ public class Window {
     private JButton[] answerButton = new JButton[4];
     private JButton nextButton = new JButton("Next");
     private JLabel questionLable = new JLabel();
-	//
+	
 	public Window(){
 		setFrame();
 		setPanel();
