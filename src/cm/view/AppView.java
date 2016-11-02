@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
-
+//
 public class AppView {
 	private JFrame frame;
 	private JPanel panel;
@@ -93,7 +93,7 @@ public class AppView {
 		else
 			return 265;
 	}
-	
+	//...
 	public void setAnwerButtonsText(){
 		answerButton[0].setText("A");
 		answerButton[1].setText("B");
