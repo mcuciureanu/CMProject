@@ -1,5 +1,7 @@
 package cm.model;
 
+
+//Question and Answer model from Users Database
 public class UserScoreModel {
 	private String user_id;
 	private String user_score;

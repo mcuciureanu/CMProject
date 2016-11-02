@@ -1,5 +1,7 @@
 package cm.model;
 
+
+//Question and Answer model from Users Database
 public class UserConnectionModel {
 
 	private String user_id;
