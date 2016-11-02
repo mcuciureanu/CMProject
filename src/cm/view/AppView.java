@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
-//
+
 public class AppView {
 	private JFrame frame;
 	private JPanel panel;
@@ -73,7 +73,7 @@ public class AppView {
 //		pressStartButton();
 		
 		frame.setSize(600,400);
-		//frame.setResizable(false);
+		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 		frame.add(panel);
