@@ -1,10 +1,10 @@
 package cm.controller;
 
-import cm.view.AppView;
+import cm.view.StartView;
 
 public class AppController {
 
 	public AppController(){
-		new AppView();
+		new StartView();
 	}
 }
