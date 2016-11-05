@@ -19,19 +19,19 @@ public class StartView extends View {
 	private JPanel startPanel;
 	private JLabel welcomeLabel;
 	private JTextField usernameTextField;
-	private JButton startButton;
+//	private JButton startButton;
 
 	public StartView(){		
 		startPanel = new JPanel();
 		welcomeLabel = new JLabel("Welcome!", SwingConstants.CENTER);
 		usernameTextField = new JTextField();
-		startButton = new JButton("start");
+//		startButton = new JButton("start");
 		
 		setFrame();
 		setStartPanel();
 		setWelcomeLabel();
 		setUsernameTextField();
-		setStartButton();
+//		setStartButton();
 		
 		/*
 		 * username maximum of characters is 10.
@@ -45,19 +45,19 @@ public class StartView extends View {
 		    {				 
 		        String username = usernameTextField.getText();
 				startPanel.setVisible(false);
-			    new GameView(username);
+				new OptionSelectionView(username);
 		    }
 		};
 
 		usernameTextField.addActionListener( action );
 		
-		startButton.addActionListener(new ActionListener() { 
-			  public void actionPerformed(ActionEvent e) { 
-				 String username = usernameTextField.getText();
-				 startPanel.setVisible(false);
-				 new GameView(username);
-			  } 
-		} );
+//		startButton.addActionListener(new ActionListener() { 
+//			  public void actionPerformed(ActionEvent e) { 
+//				 String username = usernameTextField.getText();
+//				 startPanel.setVisible(false);
+//				 new GameView(username);
+//			  } 
+//		} );
 		
 		frame.revalidate();	
 	}
@@ -67,7 +67,7 @@ public class StartView extends View {
 		startPanel.setLayout(null);
 		startPanel.setBackground(Color.white);
 		startPanel.add(welcomeLabel);
-		startPanel.add(startButton);
+//		startPanel.add(startButton);
 	}
 	
 	public void setWelcomeLabel(){
@@ -85,12 +85,12 @@ public class StartView extends View {
 		usernameLabel.setLocation(230,200);
 		usernameLabel.setSize(70,20);
 	}
-	
-	public void setStartButton(){
-		startButton.setBackground(Color.white);
-		startButton.setLocation(100,315);
-		startButton.setSize(400,50);
-	}
+//	
+//	public void setStartButton(){
+//		startButton.setBackground(Color.white);
+//		startButton.setLocation(100,315);
+//		startButton.setSize(400,50);
+//	}
 }
 
 class JTextFieldLimit extends PlainDocument {
