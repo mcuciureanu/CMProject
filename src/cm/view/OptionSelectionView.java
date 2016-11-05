@@ -42,8 +42,10 @@ public class OptionSelectionView extends View{
 		optionButton[0].addActionListener(new ActionListener() { 
 			  public void actionPerformed(ActionEvent e) { 
 				  if(buttonAlreadyClicked[0]){
+					  startGameButton.setEnabled(true);
 					  buttonAlreadyClicked[0] = false;
 				  }else{ 
+					  startGameButton.setEnabled(false);
 					  buttonAlreadyClicked[0] = true;
 				  }
 				  optionButton[1].setEnabled(buttonAlreadyClicked[0]);
@@ -55,7 +57,9 @@ public class OptionSelectionView extends View{
 			  public void actionPerformed(ActionEvent e) { 
 				  if(buttonAlreadyClicked[1]){
 					  buttonAlreadyClicked[1] = false;
+					  startGameButton.setEnabled(true);
 				  }else{ 
+					  startGameButton.setEnabled(false);
 					  buttonAlreadyClicked[1] = true;
 				  }
 				  optionButton[0].setEnabled(buttonAlreadyClicked[1]);
@@ -67,7 +71,9 @@ public class OptionSelectionView extends View{
 			  public void actionPerformed(ActionEvent e) { 
 				  if(buttonAlreadyClicked[2]){
 					  buttonAlreadyClicked[2] = false;
+					  startGameButton.setEnabled(true);
 				  }else{ 
+					  startGameButton.setEnabled(false);
 					  buttonAlreadyClicked[2] = true;
 				  }
 				  optionButton[0].setEnabled(buttonAlreadyClicked[2]);
@@ -105,6 +111,7 @@ public class OptionSelectionView extends View{
 	}
 	
 	public void setStartGameButton(){
+		startGameButton.setEnabled(false);
 		startGameButton.setBackground(Color.white);
 		startGameButton.setLocation(100,315);
 		startGameButton.setSize(400,50);
