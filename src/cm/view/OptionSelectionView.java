@@ -3,6 +3,7 @@ package cm.view;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -14,7 +15,8 @@ public class OptionSelectionView extends View{
 	private JPanel optionSelectionPanel;
 	private JLabel greetingLabel;
 	private JLabel optionSelectionLabel;
-	private JButton[] optionButton;
+	private final JButton[] optionButton;
+	private boolean[] buttonAlreadyClicked;
 	private JButton startGameButton;
 
 	public OptionSelectionView(String username){	
@@ -24,6 +26,8 @@ public class OptionSelectionView extends View{
 		greetingLabel = new JLabel("<html>Welcome, " + this.username + "!", SwingConstants.CENTER);
 		optionSelectionLabel = new JLabel("Select a game theme: ", SwingConstants.CENTER);
 		optionButton = new JButton[3];
+		buttonAlreadyClicked = new boolean[3];
+		Arrays.fill(buttonAlreadyClicked, true);
 		startGameButton = new JButton("start");
 		
 		setFrame();
@@ -31,7 +35,45 @@ public class OptionSelectionView extends View{
 		setGreetingLabel();
 		setOptionSelectionLabel();
 		setOptionButton();
+		setOptionButtonText();
 		setStartGameButton();
+
+		// needs improvement
+		optionButton[0].addActionListener(new ActionListener() { 
+			  public void actionPerformed(ActionEvent e) { 
+				  if(buttonAlreadyClicked[0]){
+					  buttonAlreadyClicked[0] = false;
+				  }else{ 
+					  buttonAlreadyClicked[0] = true;
+				  }
+				  optionButton[1].setEnabled(buttonAlreadyClicked[0]);
+				  optionButton[2].setEnabled(buttonAlreadyClicked[0]);
+			  } 
+		} );
+		
+		optionButton[1].addActionListener(new ActionListener() { 
+			  public void actionPerformed(ActionEvent e) { 
+				  if(buttonAlreadyClicked[1]){
+					  buttonAlreadyClicked[1] = false;
+				  }else{ 
+					  buttonAlreadyClicked[1] = true;
+				  }
+				  optionButton[0].setEnabled(buttonAlreadyClicked[1]);
+				  optionButton[2].setEnabled(buttonAlreadyClicked[1]);
+			  } 
+		} );
+		
+		optionButton[2].addActionListener(new ActionListener() { 
+			  public void actionPerformed(ActionEvent e) { 
+				  if(buttonAlreadyClicked[2]){
+					  buttonAlreadyClicked[2] = false;
+				  }else{ 
+					  buttonAlreadyClicked[2] = true;
+				  }
+				  optionButton[0].setEnabled(buttonAlreadyClicked[2]);
+				  optionButton[1].setEnabled(buttonAlreadyClicked[2]);
+			  } 
+		} );
 		
 		startGameButton.addActionListener(new ActionListener() { 
 			  public void actionPerformed(ActionEvent e) { 
@@ -88,5 +130,12 @@ public class OptionSelectionView extends View{
 	
 	public int setButtonYLocation(int index){
 		return 100;
+	}
+	
+	public void setOptionButtonText(){
+		optionButton[0].setText("Option 1");
+		optionButton[1].setText("Option 2");
+		optionButton[2].setText("Option 3");
+		//...
 	}
 }
