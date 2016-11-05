@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 public class GameView extends View {
+	private String username;
 	private JPanel gamePanel;
 	private JLabel usernameLabel;
 	private JLabel scoreLabel;
@@ -16,16 +17,17 @@ public class GameView extends View {
 	private JLabel timeLabel;
 	private JButton[] answerButton;
 
-	public GameView(){
-		setFrame();
+	public GameView(String username){
+		this.username = username;
 		
 		gamePanel = new JPanel();
-		usernameLabel = new JLabel("username: *****", SwingConstants.LEFT);
+		usernameLabel = new JLabel("username: " + this.username, SwingConstants.LEFT);
 		scoreLabel = new JLabel("score: 0", SwingConstants.RIGHT);
 		questionLabel = new JLabel("Question", SwingConstants.CENTER);
 		timeLabel = new JLabel("0:00", SwingConstants.CENTER);
 		answerButton = new JButton[4];
 		
+		setFrame();
 		setGamePanel();
 		setUsernameLabel();
 		setScoreLabel();
@@ -40,8 +42,6 @@ public class GameView extends View {
 				 new EndView();
 			  } 
 		} );
-		
-
 	}
 	
 	public void setGamePanel(){
@@ -54,7 +54,7 @@ public class GameView extends View {
 		gamePanel.add(usernameLabel);
 		usernameLabel.setBackground(Color.BLACK);
 		usernameLabel.setLocation(22,10);
-		usernameLabel.setSize(120,20);
+		usernameLabel.setSize(200,20);
 	}
 	
 	public void setScoreLabel(){
