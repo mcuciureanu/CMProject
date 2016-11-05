@@ -39,7 +39,7 @@ public class GameView extends View {
 		answerButton[3].addActionListener(new ActionListener() { 
 			  public void actionPerformed(ActionEvent e) { 
 				 gamePanel.setVisible(false);
-				 new EndView();
+				 new EndView(username);
 			  } 
 		} );
 	}
