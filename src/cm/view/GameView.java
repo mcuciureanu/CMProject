@@ -17,7 +17,7 @@ public class GameView extends View {
 	private JLabel timeLabel;
 	private JButton[] answerButton;
 
-	public GameView(String username){
+	public GameView(final String username){
 		this.username = username;
 		
 		gamePanel = new JPanel();

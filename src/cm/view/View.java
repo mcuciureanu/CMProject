@@ -4,7 +4,6 @@ import javax.swing.JFrame;
 
 public class View implements IView{
 	
-	@Override
 	public void setFrame() {
 		frame.setSize(600,400);
 		frame.setResizable(false);

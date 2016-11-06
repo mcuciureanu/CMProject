@@ -40,7 +40,6 @@ public class StartView extends View {
 		   
 		Action action = new AbstractAction()
 		{
-		    @Override
 		    public void actionPerformed(ActionEvent e)
 		    {				 
 		        String username = usernameTextField.getText();

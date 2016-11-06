@@ -19,7 +19,7 @@ public class OptionSelectionView extends View{
 	private boolean[] buttonAlreadyClicked;
 	private JButton startGameButton;
 
-	public OptionSelectionView(String username){	
+	public OptionSelectionView(final String username){	
 		this.username = username;
 
 		optionSelectionPanel = new JPanel();
