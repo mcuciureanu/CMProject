@@ -3,11 +3,15 @@ package cm.view;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.text.AttributeSet;
@@ -19,19 +23,30 @@ public class StartView extends View {
 	private JPanel startPanel;
 	private JLabel welcomeLabel;
 	private JTextField usernameTextField;
+	private JPasswordField passwordTextField;
 //	private JButton startButton;
 
 	public StartView(){		
 		startPanel = new JPanel();
 		welcomeLabel = new JLabel("Welcome!", SwingConstants.CENTER);
 		usernameTextField = new JTextField();
+		passwordTextField = new JPasswordField();
 //		startButton = new JButton("start");
 		
 		setFrame();
 		setStartPanel();
 		setWelcomeLabel();
 		setUsernameTextField();
+		setPasswordTextField();
 //		setStartButton();
+		
+		usernameTextField.addActionListener( new ActionListener()
+		{
+		    public void actionPerformed(ActionEvent e)
+		    {
+		    	passwordTextField.requestFocusInWindow();
+		    }
+		});
 		
 		/*
 		 * username maximum of characters is 10.
@@ -47,8 +62,9 @@ public class StartView extends View {
 				new OptionSelectionView(username);
 		    }
 		};
-
-		usernameTextField.addActionListener( action );
+		
+		passwordTextField.addActionListener( action );
+		
 		
 //		startButton.addActionListener(new ActionListener() { 
 //			  public void actionPerformed(ActionEvent e) { 
@@ -61,6 +77,11 @@ public class StartView extends View {
 		frame.revalidate();	
 	}
 	
+	private void addWindowListener(WindowAdapter windowAdapter) {
+	// TODO Auto-generated method stub
+	
+}
+
 	public void setStartPanel(){
 		frame.add(startPanel);
 		startPanel.setLayout(null);
@@ -84,6 +105,18 @@ public class StartView extends View {
 		usernameLabel.setLocation(230,200);
 		usernameLabel.setSize(70,20);
 	}
+	
+	public void setPasswordTextField(){
+		startPanel.add(passwordTextField);
+		passwordTextField.setLocation(302,222);
+		passwordTextField.setSize(115,20);
+		
+		JLabel passewordLabel = new JLabel("password: ", SwingConstants.CENTER);
+		startPanel.add(passewordLabel);
+		passewordLabel.setLocation(230,220);
+		passewordLabel.setSize(70,20);
+	}
+	
 //	
 //	public void setStartButton(){
 //		startButton.setBackground(Color.white);
