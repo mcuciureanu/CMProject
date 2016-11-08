@@ -2,9 +2,10 @@ package cm.controller;
 
 import cm.view.StartView;
 
-public class AppController {
+public class AppStartController {
 
-	public AppController(){
+	public AppStartController() {
 		new StartView();
+
 	}
 }

@@ -1,15 +1,15 @@
 package cm.start;
 
-import cm.controller.AppController;
+import cm.controller.AppStartController;
 
 public class StartApp {
 	
 	
-	public static AppController controller;
+	public static AppStartController controller;
 	
 	
 	public static void main(String[] args){
 		
-		controller = new AppController();
+		controller = new AppStartController();
 	}
 }
