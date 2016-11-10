@@ -20,25 +20,26 @@ import javax.swing.text.PlainDocument;
 
 public class StartView extends View {
 	
+	private String username;
 	private JPanel startPanel;
 	private JLabel welcomeLabel;
 	private JTextField usernameTextField;
 	private JPasswordField passwordTextField;
-//	private JButton startButton;
+	private JButton submitButton;
 
 	public StartView(){		
 		startPanel = new JPanel();
 		welcomeLabel = new JLabel("Welcome!", SwingConstants.CENTER);
 		usernameTextField = new JTextField();
 		passwordTextField = new JPasswordField();
-//		startButton = new JButton("start");
+		submitButton = new JButton("submit");
 		
 		setFrame();
 		setStartPanel();
 		setWelcomeLabel();
 		setUsernameTextField();
 		setPasswordTextField();
-//		setStartButton();
+		setSubmitButton();
 		
 		usernameTextField.addActionListener( new ActionListener()
 		{
@@ -48,16 +49,13 @@ public class StartView extends View {
 		    }
 		});
 		
-		/*
-		 * username maximum of characters is 10.
-		 */
 		usernameTextField.setDocument(new JTextFieldLimit(10));
 		   
 		Action action = new AbstractAction()
 		{
 		    public void actionPerformed(ActionEvent e)
 		    {				 
-		        String username = usernameTextField.getText();
+		        username = usernameTextField.getText();
 				startPanel.setVisible(false);
 				new OptionSelectionView(username);
 		    }
@@ -66,28 +64,22 @@ public class StartView extends View {
 		passwordTextField.addActionListener( action );
 		
 		
-//		startButton.addActionListener(new ActionListener() { 
-//			  public void actionPerformed(ActionEvent e) { 
-//				 String username = usernameTextField.getText();
-//				 startPanel.setVisible(false);
-//				 new GameView(username);
-//			  } 
-//		} );
+		submitButton.addActionListener(new ActionListener() { 
+			  public void actionPerformed(ActionEvent e) { 
+				 startPanel.setVisible(false);
+				 new OptionSelectionView(username);
+			  } 
+		} );
 		
 		frame.revalidate();	
 	}
-	
-	private void addWindowListener(WindowAdapter windowAdapter) {
-	// TODO Auto-generated method stub
-	
-}
 
 	public void setStartPanel(){
 		frame.add(startPanel);
 		startPanel.setLayout(null);
 		startPanel.setBackground(Color.white);
 		startPanel.add(welcomeLabel);
-//		startPanel.add(startButton);
+		startPanel.add(submitButton);
 	}
 	
 	public void setWelcomeLabel(){
@@ -117,12 +109,12 @@ public class StartView extends View {
 		passewordLabel.setSize(70,20);
 	}
 	
-//	
-//	public void setStartButton(){
-//		startButton.setBackground(Color.white);
-//		startButton.setLocation(100,315);
-//		startButton.setSize(400,50);
-//	}
+	
+	public void setSubmitButton(){
+		submitButton.setBackground(Color.white);
+		submitButton.setLocation(260,250);
+		submitButton.setSize(80,20);
+	}
 }
 
 class JTextFieldLimit extends PlainDocument {
